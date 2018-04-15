@@ -1,0 +1,174 @@
+一、新特性
+1.  Doctype更简单<!DOCTYPE html>
+2.  简单的编码类型 <meta charset=”utf-8″ />
+3.  大小写都可  <input tYPe="text" name="" id="">
+4.  布尔值     <input type="radio" checked> 
+5.  可以省略引号   <input type=radio> 
+6.  可以进行省略的标签 
+  1） 不允许写的结束符的标签：area、basebr、col、command、embed、hr、img、input、keygen、link、meta、param、source、track、wbrl
+  2）可以省略结束符的标签：li、dt、dd、p、rt、optgroup、option、colgroup、thread、tbody、tr、td、thl
+  3）可以完全省略的标签：html、head、body、colgroup、tbodyl
+ 
+ 
+二、新增标签和废除的标签
+新增的结构标签
+  ● section标签 
+表示页面中的一个内容区块,比如章节、页眉、页脚或页面的其他部分。可以和h1、 h2……等标签结合起来使用，表示文档结构。例：HTML5中 <section>……</section>HTML4中<div> ……</div>。
+  ● article标签 
+表示页面中一块与上下文不相关的独立内容。比如一篇文章。
+  ● aside标签 
+表示article标签内容之外的、与article标签内容相关的辅助信息。
+  ● header标签 
+表示页面中一个内容区块或整个页面的标题。
+  ● hgroup标签 
+表示对整个页面或页面中的一个内容区块的标题进行组合。
+  ● footer标签 
+表示整个页面或页面中一个内容区块的脚注。一般来说，他会包含创作者的姓名、创作日期以及创作者的联系信息。
+  ● nav标签 
+表示页面中导航链接的部分。
+  ● figure标签 
+  ● 表示一段独立的流内容，一般表示文档主体流内容中的一个独立单元。使用figcaption标签为figure标签组添加标题。
+新增的媒体标签
+  ● video标签 
+定义视频。像电影片段或其他视频流。
+  ● 例：<video src="movie.ogg" controls="controls">video标签</video> 
+  ● audio标签 
+定义音频。如音乐或其他音频流。
+  ● 例：<audio src ="someaudio.wav">audio标签</audio> 
+  ● embed标签 
+用来嵌入内容(包括各种媒体)。格式可以是Midi、Wav、AIFF、AU、MP3,flash等。例：<embed src="flash.swf" />; 
+新增表单控件标签
+  ● email 
+必须输入email
+  ● url 
+必须输入url地址
+  ● number 
+必须输入数值
+  ● range 
+必须输入一定范围内数值
+  ● Date Pickers（日期选择器） 
+拥有多个可供选取日期和时间的新输入类型： 
+date - 选取日、月、年 
+month - 选取月、年 
+week - 选取周和年 
+time - 选取时间（小时和分钟） 
+datetime - 选取时间、日、月、年（UTC 时间） 
+datetime-local - 选取时间、日、月、年（本地时间）
+  ● search 
+用于搜索域，域显示为常规的文本域。
+ 
+新增的其他标签
+  ● mark标签 
+主要用来在视觉上向用户呈现哪些需要突出显示或高亮显示的文字。典型应用搜索结果中高亮显示搜素关键字。 
+HTML5<mark></mark>;HTML4 <span></span>。
+  ● progress标签 
+表示运行中的进程，可以使用progress标签显示JavaScript中耗时时间函数的进程。等待中……、请稍后等。<progress></progress>。
+  ● time标签 
+表示日期或时间，也可以两者同时。
+  ● ruby标签 
+定义 ruby 注释（中文注音或字符）。 
+与 <ruby> 以及 <rt> 标签一同使用。ruby 标签由一个或多个字符（需要一个解释/发音）和一个提供该信息的 rt 标签组成，还包括可选的 rp 标签，定义当浏览器不支持 "ruby" 标签时显示的内容。 
+<ruby> 
+  漢 <rt><rp>(</rp>ㄏㄢˋ<rp>)</rp></rt> 
+</ruby>
+  ● rt标签 
+定义字符（中文注音或字符）的解释或发音。
+  ● rp标签 
+在 ruby 注释中使用，以定义不支持 ruby 标签的浏览器所显示的内容。
+  ● wbr标签 
+表示软换行。与br标签的区别：br标签表示此处必须换行；wbr表示浏览器窗口或父级标签足弓宽时（没必要换行时），不换行，而宽度不够时主动在此处换行。
+  ● canvas标签 
+定义图形，比如图表和其他图像。<canvas> 标签只是图形容器（画布），必须使用脚本来绘制图形。 
+<canvas id="myCanvas"></canvas><script type="text/javascript"> 
+var canvas=document.getElementById('myCanvas'); 
+var ctx=canvas.getContext('2d'); 
+ctx.fillStyle='#FF0000'; 
+ctx.fillRect(0,0,80,100); 
+</script>
+  ● command标签——貌似没什么效果。是不是支持有问题 
+表示命令按钮，比如单选按钮、复选框或按钮。
+只有当 command 标签位于 menu 标签内时，该标签才是可见的。否则不会显示这个标签，但是可以用它规定键盘快捷键。。 
+<menu> 
+<command onclick="alert('Hello World')"> 
+Click Me!</command> 
+</menu>
+  1. details标签 目前只有 Chrome 支持 details 标签 
+用于描述文档或文档某个部分的细节 。 
+可与 summary 标签配合使用，summary可以为 details 定义标题。标题是可见的，用户点击标题时，会显示出 details。summary应该是details的第一个子标签。
+  2. datalist标签 （类似于百度关键词提示）
+定义选项列表。请与 input 标签配合使用该标签，来定义 input 可能的值。datalist 及其选项不会被显示出来，它仅仅是合法的输入值列表。使用 input 标签的 list 属性来绑定 datalist。 
+<input id="myCar" list="cars" /> 
+<datalist id="cars"> 
+  <option value="BMW"> 
+  <option value="Ford"> 
+  <option value="Volvo"> 
+</datalist>
+  3. keygen标签
+标签规定用于表单的密钥对生成器字段。
+当提交表单时，私钥存储在本地，公钥发送到服务器。
+<form action="demo_keygen.asp" method="get"> 
+Username: <input type="text" name="usr_name" /> 
+Encryption: <keygen name="security" /> 
+<input type="submit" /> 
+</form>
+  ● output标签 
+定义不同类型的输出，比如脚本的输出。 
+<form action="form_action.asp" method="get" name="sumform"> 
+<output name="sum"></output> 
+</form>
+  ● source标签 
+标签为媒介标签（比如 <video> 和 <audio>）定义媒介资源。
+  ● menu标签 
+定义菜单列表。当希望列出表单控件时使用该标签。注意与nav的区别，menu专门用于表单控件。 
+<menu type=""> 有三种类型 
+<li><input type="checkbox" />Red</li> 
+<li><input type="checkbox" />blue</li> 
+</menu>
+废除的标签
+  ● 能用css代替的标签
+basefont、big、center、font、s、strike、tt、u。这些标签纯粹是为画面展示服务的，HTML5中提倡把画面展示性功能放在css中统一编辑。
+  ● 不再使用frame框架。
+frameset、frame、noframes。HTML5中不支持frame框架，只支持iframe框架，或者用服务器方创建的由多个页面组成的符合页面的形式，删除以上这三个标签。
+  ● 只有部分浏览器支持的标签
+applet、bgsound、blink、marquee等标签。
+  1. 其他被废除的标签
+废除rb，使用ruby替代。
+废除acronym使用abbr替代。
+废除dir使用ul替代。
+废除isindex使用form与input相结合的方式替代
+废除listing使用pre替代
+废除xmp使用code替代
+废除nextid使用guids
+废除plaintex使用“text/plian”（无格式正文）MIME类型替代。
+ 
+三、新增和废除的属性
+新增的属性
+表单相关的属性
+  ● 对input（type=text）、select、textarea与button指定autofocus属性。它以指定属性的方式让标签在画面打开时自动获得焦点。
+  ● 对input（type=text）、textarea指定placeholder属性，它会对用户的输入进行提示，提示用户可以输入的内容。
+  ● 对input、output、select、textarea、button与fieldset指定form属性。它声明属于哪个表单，然后将其放置在页面的任何位置，而不失表单之内。
+  ● 对input（type=text）、textarea指定required属性。该属性表示用户提交时进行检查，检查该标签内必定要有输入内容。
+  ● 为input标签增加几个新的属性：autocomplete、min、max、multiple、pattern与step。还有list属性与datalist标签配合使用；datalist标签与autocomplete属性配合使用。multiple属性允许上传时一次上传多个文件； pattern属性用于验证输入字段的模式，其实就是正则表达式。step 属性规定输入字段的合法数字间隔（假如 step="3"，则合法数字应该是 -3、0、3、6，以此类推），step 属性可以与 max 以及 min 属性配合使用，以创建合法值的范围。
+  ● 为input、button标签增加formaction、formenctype、formmethod、formnovalidate与formtarget属性。用户重载form标签的action、enctype、method、novalidate与target属性。为fieldset标签增加disabled属性，可以把它的子标签设为disabled状态。
+  ● 为input、button、form增加novalidate属性，可以取消提交时进行的有关检查，表单可以被无条件地提交。
+链接相关属性
+  ● 为a、area增加media属性。规定目标 URL 是为什么类型的媒介/设备进行优化的。该属性用于规定目标 URL 是为特殊设备（比如 iPhone）、语音或打印媒介设计的。该属性可接受多个值。只能在 href 属性存在时使用。
+  ● 为area增加herflang和rel属性。hreflang 属性规定在被链接文档中的文本的语言。只有当设置了 href 属性时，才能使用该属性。注释：该属性是纯咨询性的。rel 属性规定当前文档与被链接文档/资源之间的关系。只有当使用 href 属性时，才能使用 rel 属性。
+  ● 为link增加size属性。sizes 属性规定被链接资源的尺寸。只有当被链接资源是图标时 (rel="icon")，才能使用该属性。该属性可接受多个值。值由空格分隔。
+  ● 为base标签增加target属性，主要是保持与a标签的一致性。
+其他属性
+  ● 为ol增加reversed属性，它指定列表倒序显示。
+  ● 为meta增加charset属性
+  ● 为menu增加type和label属性。label为菜单定义一个标注，type属性定义可以menu以上下文菜单、工具条与列表三种形式出现。
+  ● 为style增加scoped属性。它允许我们为文档的指定部分定义样式，而不是整个文档。如果使用 "scoped" 属性，那么所规定的样式只能应用到 style 标签的父标签及其子标签。
+  ● 为script增减属性，它定义脚本是否异步执行。async 属性仅适用于外部脚本（只有在使用 src 属性时）有多种执行外部脚本的方法：
+      ○ 如果 async="async"：脚本相对于页面的其余部分异步地执行（当页面继续进行解析时，脚本将被执行）
+      ○ 如果不使用 async 且 defer="defer"：脚本将在页面完成解析时执行
+      ○ 如果既不使用 async 也不使用 defer：在浏览器继续解析页面之前，立即读取并执行脚本
+  ● 为html标签增加manifest，开发离线web应用程序时他与API结合使用，定义一个URL，在这个URL上描述文档的缓存信息。
+  ● 为iframe增加撒个属性，sandbox、seamless、srcdoc。用来提高页面安全性，防止不信任的web页面执行某些操作。
+ 
+ 
+ 
+ 
+ 
