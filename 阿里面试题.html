@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阿里面试题</title>
+
+</head>
+<body>
+    <h6>1.封装一个方法 判断input输入是否是回文字符串</h6>
+    <h6>2.实现已知或者未知宽度的盒子垂直水平居中</h6>
+    <div class="div1">
+        <div class="div2">护手霜啦啦啦晚上肯定就看看即可将爱的很费劲爱打架好健康带回家的好</div>
+    </div>
+    <script>
+        //1.
+        let checkStr = (val)=>{
+            if(typeof val !== 'string') return false;
+            return val.split('').reverse().join('') === val;
+        }
+    
+    
+    </script>
+
+<style type="text/css">
+    /* .div1{ }
+    .div2{
+        position: absolute;
+        width: 100px;
+        height:100px;
+        margin-top: -50px;
+        margin-left: -50px;
+        top:50%;
+        left:50%;
+    } */
+
+    /* .div1{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    } */
+
+    /* .div1{
+        display: table;
+    }
+    .div2{
+        display:table-cell;
+        vertical-align: middle;
+    } */
+
+    /* .div2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        transform:translate(-50%,-50%);
+    } */
+
+</style>
+</body>
+</html>
